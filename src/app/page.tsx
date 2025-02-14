@@ -15,7 +15,7 @@ export default function Home(): JSX.Element {
     if (url) {
       setThumbnail(url);
     } else {
-      alert("Lien YouTube invalide !");
+      alert("Invalid link");
     }
   };
 
@@ -82,11 +82,13 @@ export default function Home(): JSX.Element {
         className="text-center mb-10 z-[2]"
       >
         <h1 className="text-4xl font-bold font-poppins">
-          <span className="text-purple-600">Capturez</span> vos miniatures YouTube
-          <br /> en un clin d&apos;œil 🚀
+          <span className="text-purple-600">Capture</span> your YouTube
+          thumbnails
+          <br />
+          In the blink of an eye 🚀
         </h1>
         <p className="text-lg mt-2 text-gray-600">
-          Transformez chaque lien YouTube en une image haute qualité.
+          Transform any YouTube link into a high-quality image, for free.
         </p>
       </motion.div>
 
@@ -100,7 +102,7 @@ export default function Home(): JSX.Element {
         <div className="relative flex-grow">
           <input
             type="text"
-            placeholder="Collez l&apos;URL de la vidéo YouTube ici..."
+            placeholder="Paste the Youtube url here..."
             value={videoUrl}
             onChange={(e) => setVideoUrl(e.target.value)}
             className="w-full px-4 py-3 rounded-full bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-md"
@@ -120,7 +122,7 @@ export default function Home(): JSX.Element {
           whileTap={{ scale: 0.95 }}
           className="px-6 py-3 rounded-full bg-purple-500 text-white font-bold hover:bg-purple-600 shadow-lg"
         >
-          Récupérer
+          Search
         </motion.button>
       </motion.div>
 
@@ -151,7 +153,7 @@ export default function Home(): JSX.Element {
             />
           </div>
           <p className="mt-4 text-purple-600 font-medium">
-            Votre miniature est prête !
+            Your thumbnail is ready is to download!
           </p>
         </motion.div>
       )}

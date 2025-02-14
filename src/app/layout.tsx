@@ -15,28 +15,29 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        <title>ThumbSnatch - Capturez vos miniatures YouTube</title>
+        <title>ThumbSnatch - Capture your YouTube thumbnails</title>
         <meta
           name="description"
-          content="Transformez chaque lien YouTube en une miniature haute qualité avec ThumbSnatch."
+          content="Transform any YouTube link into a high-quality thumbnail with ThumbSnatch."
         />
         <meta
           name="keywords"
-          content="YouTube thumbnail, capture miniature YouTube, télécharger miniature vidéo"
+          content="YouTube thumbnail, capture YouTube thumbnail, download video thumbnail"
         />
-        <meta name="author" content="Votre Nom" />
+        <meta name="author" content="Your Name" />
         <meta
           property="og:title"
-          content="ThumbSnatch - Miniatures YouTube instantanées"
+          content="ThumbSnatch - Instant YouTube Thumbnails"
         />
         <meta
           property="og:description"
-          content="Obtenez des miniatures haute qualité à partir de n'importe quel lien YouTube."
+          content="Get high-quality thumbnails from any YouTube link."
         />
         <meta property="og:image" content="/public/thumbnail-preview.png" />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content="https://get-youtube-thumbnail.app" />
         <meta name="twitter:card" content="summary_large_image" />
       </head>
+
       <body>{children}</body>
     </html>
   );
