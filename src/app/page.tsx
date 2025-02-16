@@ -1,13 +1,22 @@
 "use client";
 
-import React, { JSX, useState } from "react";
+import React, { JSX, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiClipboard, FiDownload } from "react-icons/fi";
+import TagManager from "react-gtm-module";
+import Footer from "./footer/footer";
 
 export default function Home(): JSX.Element {
   const [videoUrl, setVideoUrl] = useState<string>("");
   const [thumbnail, setThumbnail] = useState<string>("");
+
+  useEffect(() => {
+    const tagManagerArgs = {
+      gtmId: "GTM-TKKZVT44",
+    };
+    TagManager.initialize(tagManagerArgs);
+  }, []);
 
   // Fonction pour récupérer la miniature
   const handleFetchThumbnail = (): void => {
@@ -157,6 +166,8 @@ export default function Home(): JSX.Element {
           </p>
         </motion.div>
       )}
+
+      {/* <Footer /> */}
     </div>
   );
 }

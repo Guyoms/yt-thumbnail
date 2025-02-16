@@ -1,0 +1,12 @@
+# Bloque tous les robots d'accéder aux dossiers sensibles
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Permet l'accès à tout le reste du site
+User-agent: *
+Allow: /
+
+# Indique l'emplacement du sitemap pour une meilleure indexation
+Sitemap: https://get-youtube-thumbnail.app/sitemap.xml

@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <head>
         <title>ThumbSnatch - Capture your YouTube thumbnails</title>
         <meta
