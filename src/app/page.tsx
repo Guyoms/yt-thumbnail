@@ -4,8 +4,7 @@ import React, { JSX, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiClipboard, FiDownload } from "react-icons/fi";
-import TagManager from "react-gtm-module";
-import Footer from "./footer/footer";
+import TagManager from 'react-gtm-module';
 
 export default function Home(): JSX.Element {
   const [videoUrl, setVideoUrl] = useState<string>("");
@@ -167,7 +166,6 @@ export default function Home(): JSX.Element {
         </motion.div>
       )}
 
-      {/* <Footer /> */}
     </div>
   );
 }
