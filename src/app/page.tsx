@@ -4,11 +4,16 @@ import React, { JSX, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiClipboard, FiDownload } from "react-icons/fi";
-import TagManager from 'react-gtm-module';
+import TagManager from "react-gtm-module";
+// import Footer from "./footer/footer";
+import ReactGA from "react-ga4";
 
 export default function Home(): JSX.Element {
   const [videoUrl, setVideoUrl] = useState<string>("");
   const [thumbnail, setThumbnail] = useState<string>("");
+
+  ReactGA.initialize("G-CL3ZBV92QZ");
+  ReactGA.send({ hitType: "pageview", page: "/", title: "Page view" });
 
   useEffect(() => {
     const tagManagerArgs = {
@@ -22,6 +27,14 @@ export default function Home(): JSX.Element {
     const url = getThumbnailUrl(videoUrl);
     if (url) {
       setThumbnail(url);
+      ReactGA.event({
+        category: "Search",
+        action: "Search",
+        label: "Search url", // optional
+        value: 1, // optional, must be a number
+        nonInteraction: true, // optional, true/false
+        transport: "xhr", // optional, beacon/xhr/image
+      });
     } else {
       alert("Invalid link");
     }
@@ -74,6 +87,15 @@ export default function Home(): JSX.Element {
         // Nettoyer après le téléchargement
         document.body.removeChild(link);
         URL.revokeObjectURL(blobURL);
+
+        ReactGA.event({
+          category: "Download",
+          action: "Download",
+          label: "Download image", // optional
+          value: 2, // optional, must be a number
+          nonInteraction: true, // optional, true/false
+          transport: "xhr", // optional, beacon/xhr/image
+        });
       } catch (error) {
         console.error("Erreur lors du téléchargement :", error);
       }
@@ -165,7 +187,7 @@ export default function Home(): JSX.Element {
           </p>
         </motion.div>
       )}
-
+      {/* <Footer /> */}
     </div>
   );
 }
